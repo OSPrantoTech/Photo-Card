@@ -5,31 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Photo Card Generator</title>
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 <body>
     <div class="app-container">
         <aside class="sidebar">
-            <h1>Photo Card Generator</h1>
-            <div class="control-group">
-                <label>Select Template</label>
-                <select id="templateSelect">
-                    <option value="jamuna">Kamuna TV Style</option>
-                    </select>
+            <div class="sidebar-header">
+                <h1>Photo Card Generator</h1>
+                <p>Created by Aminul</p>
             </div>
-            <input type="file" id="imageInput" accept="image/*">
-            <button id="downloadBtn">Download Card</button>
+            
+            <div class="controls">
+                <div class="control-group">
+                    <label>Select Template</label>
+                    <select id="templateSelect">
+                        <option value="jamuna">Kamuna TV Style</option>
+                        <option value="breaking">Breaking News</option>
+                        <option value="classic">Classic Newspaper</option>
+                    </select>
+                </div>
+
+                <div class="section-title">Content</div>
+                <div id="dynamicContent">
+                    <div class="control-group">
+                        <label>Headline</label>
+                        <textarea id="headlineInput" rows="3">এখানে আপনার শিরোনাম লিখুন</textarea>
+                    </div>
+                </div>
+
+                <div class="section-title">Media</div>
+                <div class="control-group">
+                    <label>Main Image</label>
+                    <input type="file" id="imageInput" accept="image/*">
+                </div>
+
+                <button id="downloadBtn" class="download-btn">Download Card</button>
+            </div>
         </aside>
 
         <main class="preview-area">
             <div id="capture-area">
                 <div class="template-wrapper jamuna-theme" id="card-template">
+                    <div class="jamuna-body">
+                        <div class="jamuna-image-wrap">
+                            <img src="https://via.placeholder.com/1080" class="jamuna-main-image" id="previewImg">
+                        </div>
+                        <div class="jamuna-text-wrap">
+                            <h1 class="jamuna-headline" id="previewHeadline">এখানে আপনার শিরোনাম লিখুন</h1>
+                        </div>
                     </div>
+                </div>
             </div>
         </main>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
