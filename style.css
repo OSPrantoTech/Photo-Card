@@ -1,0 +1,14 @@
+:root {
+    --font: 'Hind Siliguri';
+    --bg: #ffffff;
+    --text: #000000;
+}
+
+.template-wrapper.jamuna-theme {
+    width: 1080px;
+    height: 1080px;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font), sans-serif;
+}
+/* তোমার HTML ফাইলে থাকা বাকি CSS গুলো এখানে যুক্ত করো */
